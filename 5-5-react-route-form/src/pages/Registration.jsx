@@ -9,6 +9,7 @@ export default function Registration() {
   const handleSubmit = (e) => {
     e.preventDefault();
     {/*Form validations*/}
+    const nextErrors = {};
     if (!email.trim()) {
       nextErrors.email = "Email is required";
     } else if (!(email.includes("@") && email.endsWith(".com"))) {
@@ -99,7 +100,7 @@ export default function Registration() {
         </fieldset>
 
           {/*Disable the submit button until all requirements met*/}
-        <button type="submit" className="btn" disabled={!email || !password || !gender}>Register</button>
+        <button type="submit" className="btn" >Register</button>
       </form>
 
       <div className="card info">
